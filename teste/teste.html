@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+<style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: #0c021c;
+      color: white;
+      padding-top: 80px; /* Compensa o menu fixo */
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #1a1a2e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0; /* sem margem lateral */
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      color: #ffb703;
+    }
+
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 10% 60px;
+      flex-wrap: wrap;
+    }
+
+    header .text {
+      max-width: 600px;
+    }
+
+    header h1 {
+      font-size: 70px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    header img {
+      width: 400px;
+      max-width: 90vw;
+      border-radius: 10px;
+    }
+
+    
+
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn {
+    background-color: #ffb703;
+    color: #0c021c;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #e0a600;
+  }
+
+
+  .social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+  }
+
+  .social-icons a {
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #ffb703;
+  }
+
+
+    section#work {
+      background-color: #f7fafc;
+      color: #000;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    section#work h2 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    section#work .tabs {
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    section#work .tabs button {
+      padding: 10px 20px;
+      border: none;
+      background: #ddd;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    section#work .tabs button.active {
+      background: #333;
+      color: #fff;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .project {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #333;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .project h3 {
+      margin: 0 0 10px 0;
+      font-size: 22px;
+    }
+
+    .project p {
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .project-links {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .project-links a img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    section#contact {
+      background: #0c021c;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    section#contact h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    section#contact p {
+      font-size: 18px;
+      color: #ddd;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background: #0c021c;
+      color: white;
+      text-align: center;
+      padding: 40px 10%;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: #f7fafc;
+      border-top-left-radius: 100% 30px;
+      border-top-right-radius: 100% 30px;
+    }
+
+    .footer-icons {
+      margin-top: 20px;
+      font-size: 24px;
+    }
+
+    .footer-icons a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+</style>
+
+</head>
+<body>
+
+  <nav>
+    <div class="logo">< / Carlos Rodrigues ></div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#work">Projetos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Sessão apresentação -->
+  <header id="home">
+    <div class="text">
+      <h2>Olá, eu sou</h2>
+      <h1>Carlos Rodrigues</h1>
+      <h2>Cientista de dados & desenvolvedor RPA</h2>
+      <div class="buttons">
+        <a href="#contact" class="btn">Fale comigo</a>
+        <a href="\arquivos\cv-carlos-rodrigues-v110625.pdf" class="btn" target="_blank">Currículo</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://github.com/carlosrodriguesjf" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:carlosrodriguesjf@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <img src="arquivos\pc.png" alt="Laptop e código">
+  </header>
+
+
+  <!-- Sessão Sobre Mim -->
+  <header id="about">
+    <img src="\arquivos\avatar.png" 
+        alt="Foto de perfil" 
+        style="width: 200px;  border-radius: 50%; margin-bottom: 20px; margin-left: 200px;">
+    <div class="text">
+      <p>Meu nome é Carlos Rodrigues, um profissional de Dados e Automação. Atuo como Cientista de Dados e Desenvolvedor RPA, trabalhando com projetos com foco em gerar insights relevantes por meio da análise de dados e automatizar processos para aumentar a eficiência operacional. Meu objetivo é criar soluções inteligentes que aliem precisão analítica, escalabilidade e impacto real nos negócios.</p>
+    </div>
+  </header>
+
+
+  <!-- Sessão Projetos -->
+  <section id="work">
+    <h2>Meus Projetos</h2>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="datascience">Data Science</button>
+      <button class="tab-btn" data-tab="automacao">Automação de Processos</button>
+    </div>
+
+    <!-- Projetos de Data Science -->
+    <div id="datascience" class="projects tab-content" style="display: flex;">
+      <div class="project">
+        <h3>Dashboard Analítico</h3>
+        <p>Desenvolvi um dashboard analítico para uma Central de Atendimento Universitária ficitícia. O projeto envolveu a coleta, limpeza e análise de grandes dos dados, além da criação de visualizações personalizadas para atender às necessidades específicas do projeto. Através do uso de  Python e Power BI, foi possível desenvolver um painel interativo e eficiente, oferecendo insights valiosos sobre o desempenho da equipe, e as principais demandas.</p>
+        <div class="project-links">
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiOTkzNzFkZTQtYWU4ZS00N2M5LWI3ODUtZGRmY2Q4Yzk1MDcwIiwidCI6ImY2MjFhMmY0LWJhM2QtNGEyMC05MDA3LTZjNTAyNjU1MGFiZiJ9" target="_blank" title="Dashboard Analítico">
+            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Site">
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Análise dos dados de Cancelamento de Matrícula de uma Universidade</h3>
+        <p>Este projeto tem como objetivo identificar alguns padrões e fatores que influenciam a saída dos alunos. Através da coleta, processamento e visualização dos dados, busca-se compreender os principais motivos da evasão, bem como principalmente, sua distribuição por campus, tipo de ingresso, curso e área de estudo, fornecendo informações essenciais para embasar a tomada de decisões institucionais.</p>
+        <div class="project-links">
+          <a href="https://github.com/carlosrodriguesjf/analise-de-cancelamentos-de-matriculas" target="_blank" title="Cancelamento de Matrícula">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Análise de Churn Telefonia</h3>
+        <p>Neste projeto, realizaremos uma análise detalhada do comportamento dos clientes com base em um conjunto de dados contendo informações como idade, tempo de contrato, frequência de uso, total gasto, interações com o call center e outras variáveis relevantes. O objetivo é identificar padrões que 
+        diferenciam clientes que permanecem dos que cancelam, permitindo a criação de estratégias para minimizar o churn.</p>
+        <div class="project-links">
+          <a href="https://github.com/carlosrodriguesjf/analise-churn-empresa-telefonia" target="_blank" title="Análise de Churn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Projetos de automação -->
+    <div id="automacao" class="projects tab-content" style="display: none;">
+      <div class="project">
+        <h3>Automação para Geração de Certificados</h3>
+        <p>Este projeto tem como objetivo automatizar a geração de certificados personalizados a partir de uma planilha contendo informações sobre os participantes e os seus cursos concluídos.</p>
+        <div class="project-links">
+          <a href="https://github.com/carlosrodriguesjf/automacao-geracao-de-certificados" target="_blank" title="Gerador de certificados">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </a>
+        </div>
+      </div>
+
+      <!-- Exemplo -->
+      <!-- <div class="project">
+        <h3>Previsão de Vendas</h3>
+        <p>Modelo de machine learning para prever vendas com base em séries temporais. Usando scikit-learn e Prophet.</p>
+        <div class="project-links">
+          <a href="https://github.com/seuusuario/previsao-vendas" target="_blank" title="GitHub Previsão de Vendas">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </a>
+          <a href="https://previsaovendas.example.com" target="_blank" title="Site Previsão de Vendas">
+            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Site">
+          </a>
+        </div>
+      </div> -->
+    </div>
+  </section>
+
+
+<!-- Sessão contato -->
+  <section id="contact" style="text-align: center; padding: 80px 5%; background-color: #0c021c; color: white;">
+  <h2>Contato</h2>
+  <p>Email: <a href="mailto:carlosrodriguesjf@gmail.com" style="color: #ffb703;">carlosrodriguesjf@gmail.com</a></p>
+  <p>Telefone: <a href="tel:+5532991245484" style="color: #ffb703;">(32) 991245484</a></p>
+
+  <div style="margin-top: 20px;">
+    <!-- GitHub -->
+    <a href="https://github.com/carlosrodriguesjf" target="_blank" style="margin: 0 15px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="32" height="32">
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/carlosrodriguesjf" target="_blank" style="margin: 0 15px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="32" height="32">
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5532991245484" target="_blank" style="margin: 0 15px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="32" height="32" style="filter: brightness(1.1);">
+    </a>
+  </div>
+</section>
+
+
+  <!-- Rodapé -->
+  <footer>
+    <p>2025</p>
+  </footer>
+
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        contents.forEach(c => {
+          if (c.id === tab.dataset.tab) {
+            c.style.display = 'flex';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
